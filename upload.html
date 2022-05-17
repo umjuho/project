@@ -1,0 +1,19 @@
+    {% block content %}
+    {% extends "layout.html" %}
+    <table id="user-upload">
+      <thead>
+      <tr>
+        <legend>About Us</legend>
+        <div><input id="userid" type="text" placeholder="학번"></div>
+        <div><input id="name" type="text" placeholder="이름"></div>
+        <div><input id="birth" type="text" placeholder="생년월일"></div>
+        <div><input id="contact" type="text" placeholder="연락처"></div>
+        <div><input id="email" type="text" placeholder="이메일"></div>
+        <div><input id="mbti" type="text" placeholder="MBTI"></div>
+        <div><input id="like" type="text" placeholder="좋아하는 것"></div>
+        <div><input id="part" type="text" placeholder="담당 파트"></div>
+        <button type="submit">등록</button>
+      </tr>
+      </thead>
+    </table>
+    {% endblock %}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/menu.css">
+    <link rel="stylesheet" href="/post.css">
+    <title>{{title}}</title>
+</head>
+<body>
+    {% include "header.html" %}
+    {% include "navigation.html" %}
+    <main>
+        <h2>FAQ</h2>
+        <div id="board">
+            <table id="boardtable">
+                <caption class="postinfo" id="postnum"><img src="./noun-menu-102129.png" alt="" width="20px"> {{postnum}}</caption>
+                <caption class="postinfo" id="date"><img src="./noun-calendar-4803106.png" alt="" width="20px"> {{date}}</caption>
+                <caption class="postinfo" id="writer"><img src="./noun-pencil-4789800.png" alt="" width="20px"> {{writer}}</caption>
+                <caption class="postinfo" id="rcount"><img src="./noun-view-1210532.png" alt="" width="20px"> {{rcount}}</caption>
+                <tr class="postTitle">
+                    <th colspan="3">{{postTitle}}</th>
+                </tr>
+                <tr class="postContent">
+                    <td colspan="3">{{postContent}}</td>
+                </tr>
+                <tr class="attach">
+                    <td colspan="3">
+                    {% if attach %}
+                    {{attach}}
+                    {% endif %}
+                </td>
+                </tr>
+                <tr class="cmenu">
+                    <td colspan="3" id="comment">댓글</td>
+                    {% if writer === user %}
+                    <td>댓글</td>
+                    <td id="edit">수정</td>
+                    <td id="delete">삭제</td>
+                    {% endif %}
+                </tr>
+                <tr class="plist">
+                    <td id="previous"><a href="">이전 글</a></td>
+                    <td id="list"><a href="">목록</a></td>
+                    <td id="next">
+                    {% if next %}
+                    <a href="">다음 글</a>
+                    {% endif %}
+                </td>
+                </tr>
+            </table>
+        </div>
+    </main>
+    <!-- {% include "comment.html" %} -->
+    {% include "footer.html" %}
+</body>
+</html>

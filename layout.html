@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/menu.css">
+    <link rel="stylesheet" href="/post.css">
+    <link rel="stylesheet" href="/mouse.css">
+    <title>시퀄라이즈 서버</title>
+    <style>
+      table { border: 1px solid black; border-collapse: collapse; }
+      table th, table td { border: 1px solid black; }
+    </style>
+  </head>
+  <body>
+    {% block content %}
+    <table id="user-list">
+      <tbody>
+        {% for user in user-list %}
+        <tr>
+          <td>{{user-list.student_n}}</td>
+          <td>{{user-list.name}}</td>
+          <td>{{user-list.birth}}</td>
+          <td>{{user.contact}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.mbti}}</td>
+          <td>{{user.like}}</td>
+          <td>{{user.part}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      <form id="uploads" action="uploads"><button>등록</button></form>
+    </table>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/sequelize.js"></script>
+    {% endblock %}
+    {% include "footer.html" %}
+  </body>
+</html>
+    
